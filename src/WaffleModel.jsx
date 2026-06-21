@@ -21,7 +21,7 @@ export default function WaffleModel({color, feetType, ...props}) {
   })
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} rotation={[0,3.6,0]}>
       <mesh geometry={nodes.Mesh004.geometry}>
         {feetType === 'wood' && <meshStandardMaterial 
           {...materials.M_Piedini}

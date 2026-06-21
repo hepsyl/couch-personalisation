@@ -10,7 +10,7 @@ import { Color } from 'three'
 export default function CurdoroyModel({color, feetType, ...props}) {
   const { nodes, materials } = useGLTF('../public/models/greencurdoroy_wood-transformed.glb')
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} rotation={[0,3.6,0]}>
       <mesh geometry={nodes.Mesh004.geometry}>
         {feetType === 'wood' && <meshStandardMaterial 
           {...materials.M_Piedini}
