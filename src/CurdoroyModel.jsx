@@ -6,9 +6,10 @@ Files: public/models/greencurdoroy_wood.glb [211.39MB] > C:\Users\jadel\OneDrive
 
 import { useGLTF } from '@react-three/drei'
 import { Color } from 'three'
+const base = import.meta.env.BASE_URL
 
 export default function CurdoroyModel({color, feetType, ...props}) {
-  const { nodes, materials } = useGLTF('../public/models/greencurdoroy_wood-transformed.glb')
+  const { nodes, materials } = useGLTF(base + 'models/greencurdoroy_wood-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Mesh004.geometry}>
@@ -34,4 +35,4 @@ export default function CurdoroyModel({color, feetType, ...props}) {
   )
 }
 
-useGLTF.preload('../public/models/greencurdoroy_wood-transformed.glb')
+useGLTF.preload(base + 'models/greencurdoroy_wood-transformed.glb')

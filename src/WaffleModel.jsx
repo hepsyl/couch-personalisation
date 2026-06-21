@@ -7,9 +7,10 @@ Files: public/models/greenwaffle_wood.glb [214.83MB] > C:\Users\jadel\OneDrive\P
 import { useGLTF } from '@react-three/drei'
 import { Color } from 'three'
 import * as THREE from 'three'
+const base = import.meta.env.BASE_URL
 
 export default function WaffleModel({color, feetType, ...props}) {
-  const { nodes, materials } = useGLTF('../public/models/greenwaffle_wood-transformed.glb')
+  const { nodes, materials } = useGLTF(base + 'models/greenwaffle_wood-transformed.glb')
 
   const mat = materials.M_TessutoDivano;
   [mat.normalMap, mat.roughnessMap, mat.aoMap].forEach((tex) => {
@@ -46,4 +47,4 @@ export default function WaffleModel({color, feetType, ...props}) {
   )
 }
 
-useGLTF.preload('../public/models/greenwaffle_wood-transformed.glb')
+useGLTF.preload(base + 'models/greenwaffle_wood-transformed.glb')
