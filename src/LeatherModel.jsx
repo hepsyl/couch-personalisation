@@ -6,10 +6,9 @@ Files: public/models/redleather_wood.glb [155.29MB] > C:\Users\jadel\OneDrive\Pr
 
 import { useGLTF } from '@react-three/drei'
 import { Color } from 'three'
-const base = import.meta.env.BASE_URL
 
 export default function LeatherModel({color, feetType, ...props}) {
-  const { nodes, materials } = useGLTF(base + 'models/redleather_wood-transformed.glb')
+  const { nodes, materials } = useGLTF('../public/models/redleather_wood-transformed.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Mesh004.geometry}>
@@ -33,4 +32,4 @@ export default function LeatherModel({color, feetType, ...props}) {
   )
 }
 
-useGLTF.preload(base + 'models/redleather_wood-transformed.glb')
+useGLTF.preload('../public/models/redleather_wood-transformed.glb')
